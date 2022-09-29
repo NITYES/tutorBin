@@ -1,0 +1,605 @@
+{
+	"info": {
+		"_postman_id": "8ade9012-2ded-49e0-9846-d42b8b143c48",
+		"name": "TutorBin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"tutorbin@gmail.com\",\n    \"name\":\"nitesh\",\n    \"password\":\"pass1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"tutorbin@gmail.com\",\n    \"name\":\"nitesh\",\n    \"password\":\"pass1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request is Successful\",\n    \"success\": true,\n    \"data\": {\n        \"name\": \"nitesh\",\n        \"email\": \"tutorbin@gmail.com\",\n        \"_id\": \"6335cdeed34f03e100e96b63\",\n        \"createdAt\": \"2022-09-29T16:55:10.812Z\",\n        \"updatedAt\": \"2022-09-29T16:55:10.812Z\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"tutorbin1@gmail.com\",\n    \"password\":\"pass1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test@gmail.com\",\n    \"password\":\"pass1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"_id\": \"6332ac4746a3c0eefdcfcd2f\",\n        \"name\": \"nitesh\",\n        \"email\": \"test@gmail.com\",\n        \"createdAt\": \"2022-09-27T07:54:47.067Z\",\n        \"updatedAt\": \"2022-09-27T07:54:47.067Z\",\n        \"__v\": 0\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzJhYzQ3NDZhM2MwZWVmZGNmY2QyZiIsImlhdCI6MTY2NDM4Nzg1MCwiZXhwIjoxNjY0MzkxNDUwfQ.FyYxShuCFLcmRV08xy_BXy4Fb4s3wcY4RMLzYPwzcJw\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzVjZGVlZDM0ZjAzZTEwMGU5NmI2MyIsImlhdCI6MTY2NDQ3MDU4NiwiZXhwIjoxNjY0NDc0MTg2fQ.JGZMblyykuCLj5t3k4rDyHfZMcYIBWDiIF18szN5Evk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"Meeting with client on friday\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/task/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzJhYzQ3NDZhM2MwZWVmZGNmY2QyZiIsImlhdCI6MTY2NDQ0MTk3OSwiZXhwIjoxNjY0NDQ1NTc5fQ.b232_-qkpjQzj59LEaJoI8i13NGML4pJ854CFmwluck ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\":\"Meeting with doctor on tuesday\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/task/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"task",
+								"add"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request is Successful\",\n    \"success\": true,\n    \"data\": {\n        \"author\": \"6332ac4746a3c0eefdcfcd2f\",\n        \"content\": \"Meeting with doctor on tuesday.\",\n        \"status\": false,\n        \"_id\": \"633567bbe7f9acbf3191b803\",\n        \"date\": \"2022-09-29T09:39:07.109Z\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "AllTaskList",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzVjZGVlZDM0ZjAzZTEwMGU5NmI2MyIsImlhdCI6MTY2NDQ3MDU4NiwiZXhwIjoxNjY0NDc0MTg2fQ.JGZMblyykuCLj5t3k4rDyHfZMcYIBWDiIF18szN5Evk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/task/6335cdeed34f03e100e96b63/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task",
+						"6335cdeed34f03e100e96b63",
+						"list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AllTaskList",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/task/{{userid}}/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"task",
+								"{{userid}}",
+								"list"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request is Successful\",\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"63355f7fe7f9acbf3191b7ea\",\n            \"author\": \"6332ac4746a3c0eefdcfcd2f\",\n            \"content\": \"I am going to wash cloths.2. User have done works\",\n            \"status\": false,\n            \"date\": \"2022-09-29T09:03:59.446Z\",\n            \"__v\": 0\n        }\n    ],\n    \"statusCode\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "singleTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzVjZGVlZDM0ZjAzZTEwMGU5NmI2MyIsImlhdCI6MTY2NDQ3MDU4NiwiZXhwIjoxNjY0NDc0MTg2fQ.JGZMblyykuCLj5t3k4rDyHfZMcYIBWDiIF18szN5Evk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzU3ZmEzZWEwNDZmOGYxMDE0OWMzMCIsImlhdCI6MTY2NDQ1MDUwNCwiZXhwIjoxNjY0NDU0MTA0fQ.A3_EoUbMGTborxrwI9dw8x_skPGPzkRNfokmMUTaDtE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/task/6335cdeed34f03e100e96b63/list/6335ce4bd34f03e100e96b68",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task",
+						"6335cdeed34f03e100e96b63",
+						"list",
+						"6335ce4bd34f03e100e96b68"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "singleTask",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzJhYzQ3NDZhM2MwZWVmZGNmY2QyZiIsImlhdCI6MTY2NDQ0MTk3OSwiZXhwIjoxNjY0NDQ1NTc5fQ.b232_-qkpjQzj59LEaJoI8i13NGML4pJ854CFmwluck",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/task/{{userid}}/list/{{taskid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"task",
+								"{{userid}}",
+								"list",
+								"{{taskid}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request is Successful\",\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"63355f7fe7f9acbf3191b7ea\",\n        \"author\": \"6332ac4746a3c0eefdcfcd2f\",\n        \"content\": \"I am going to wash cloths.2. User have done works\",\n        \"status\": false,\n        \"date\": \"2022-09-29T09:03:59.446Z\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "EditTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzVjZGVlZDM0ZjAzZTEwMGU5NmI2MyIsImlhdCI6MTY2NDQ3MDU4NiwiZXhwIjoxNjY0NDc0MTg2fQ.JGZMblyykuCLj5t3k4rDyHfZMcYIBWDiIF18szN5Evk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\":\"Meeting with doctor on wednesday\",\n    \"status\":true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/task/6335cdeed34f03e100e96b63/list/6335ce4bd34f03e100e96b68",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task",
+						"6335cdeed34f03e100e96b63",
+						"list",
+						"6335ce4bd34f03e100e96b68"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EditTask",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzJhYzQ3NDZhM2MwZWVmZGNmY2QyZiIsImlhdCI6MTY2NDQ0MTk3OSwiZXhwIjoxNjY0NDQ1NTc5fQ.b232_-qkpjQzj59LEaJoI8i13NGML4pJ854CFmwluck",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\":\"i am changing content of list and will join the seminar\",\n    \"status\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/task/{{userid}}/list/{{taskid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"task",
+								"{{userid}}",
+								"list",
+								"{{taskid}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request is Successful\",\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"63355f7fe7f9acbf3191b7ea\",\n        \"author\": \"6332ac4746a3c0eefdcfcd2f\",\n        \"content\": \"i am changing content of list and will join the seminar\",\n        \"status\": false,\n        \"date\": \"2022-09-29T09:03:59.446Z\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzVjZGVlZDM0ZjAzZTEwMGU5NmI2MyIsImlhdCI6MTY2NDQ3MDU4NiwiZXhwIjoxNjY0NDc0MTg2fQ.JGZMblyykuCLj5t3k4rDyHfZMcYIBWDiIF18szN5Evk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/task/6335cdeed34f03e100e96b63/list/6335ce4bd34f03e100e96b68",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task",
+						"6335cdeed34f03e100e96b63",
+						"list",
+						"6335ce4bd34f03e100e96b68"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteTask",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzJhYzQ3NDZhM2MwZWVmZGNmY2QyZiIsImlhdCI6MTY2NDQ0MTk3OSwiZXhwIjoxNjY0NDQ1NTc5fQ.b232_-qkpjQzj59LEaJoI8i13NGML4pJ854CFmwluck",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/task/{{userid}}/list/{{taskid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"task",
+								"{{userid}}",
+								"list",
+								"{{taskid}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request is Successful\",\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"63355f7fe7f9acbf3191b7ea\",\n        \"author\": \"6332ac4746a3c0eefdcfcd2f\",\n        \"content\": \"i am changing content of list and will join the seminar\",\n        \"status\": false,\n        \"date\": \"2022-09-29T09:03:59.446Z\",\n        \"__v\": 0\n    },\n    \"statusCode\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteAllTaskOfUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzVjZGVlZDM0ZjAzZTEwMGU5NmI2MyIsImlhdCI6MTY2NDQ3MDU4NiwiZXhwIjoxNjY0NDc0MTg2fQ.JGZMblyykuCLj5t3k4rDyHfZMcYIBWDiIF18szN5Evk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/task/6335cdeed34f03e100e96b63",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"task",
+						"6335cdeed34f03e100e96b63"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteAllTaskOfUser",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzJhYzQ3NDZhM2MwZWVmZGNmY2QyZiIsImlhdCI6MTY2NDQ0MTk3OSwiZXhwIjoxNjY0NDQ1NTc5fQ.b232_-qkpjQzj59LEaJoI8i13NGML4pJ854CFmwluck",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/task/{{userid}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"task",
+								"{{userid}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request is Successful\",\n    \"success\": true,\n    \"data\": {\n        \"acknowledged\": true,\n        \"deletedCount\": 0\n    },\n    \"statusCode\": 200\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
