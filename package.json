@@ -1,10 +1,10 @@
 {
-  "name": "boilerplate-by-nitesh",
+  "name": "tutorbin",
   "version": "1.0.0",
   "description": "It is a boilerplate for node.js, mongodb stack",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "NODE_ENV=DEV nodemon server.js"
   },
   "keywords": [
@@ -30,9 +30,13 @@
     "winston-daily-rotate-file": "^4.7.1"
   },
   "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
     "eslint": "^8.24.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "nodemon": "^2.0.19"
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.19",
+    "request": "^2.88.2"
   }
 }

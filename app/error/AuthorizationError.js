@@ -1,8 +1,8 @@
 const BaseError = require('./BaseError');
 
 class AuthorizationError extends BaseError {
-  constructor(error) {
-    super(error.message);
+  constructor(message) {
+    super(message);
     this.code = 401;
   }
 }

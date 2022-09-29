@@ -1,5 +1,5 @@
 const { Error } = require('mongoose');
-const { ValidationError } = require('../error/ValidationError');
+const { ValidationError,AuthorizationError,NotFoundError } = require('../error');
 const { DatabaseError } = require('../httpAPI/responseWrapper');
 const logger=require('../utils/winstonlogger')
 module.exports = function (err, req, res, next) {
@@ -20,6 +20,17 @@ module.exports = function (err, req, res, next) {
       },
     });
   }
+
+if(err instanceof NotFoundError){
+  return res.status(err.code).json({
+    success: false,
+    name: err.name,
+    message: err.message,
+    error: {
+      params: err.params,
+    },
+  });
+}
 
   return res.status(err.code || 500).json({
     success: false,

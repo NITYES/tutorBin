@@ -9,7 +9,7 @@ function success(data, message = 'Request is Successful', statusCode = 200) {
 
 function errorResponse(message = 'something went wrong', error = null, statusCode = 500) {
   return {
-    name: 'UnknownError',
+    name: 'unknown error',
     message,
     success: false,
     error,
