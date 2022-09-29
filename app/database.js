@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const { MONGO_DB_URL} = require('../config/env');
 
 async function DatabaseConnection(logger) {
-  const connection = await mongoose.connect('mongodb://localhost:27017/myapp', {});
+  const connection = await mongoose.connect(MONGO_DB_URL, {});
 
   mongoose.connection.on('connected', () => {
     logger.info('Database connection is successfull.');
